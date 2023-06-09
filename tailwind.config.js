@@ -9,7 +9,7 @@ export default {
     },
     colors: {
       main: '#002446',
-      secondary: '#E4BF56'
+      secondary: '#E4BF56',
     },
     screens: {
       'sm': '640px',

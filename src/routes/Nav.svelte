@@ -4,6 +4,7 @@
     let path;
 
     $: path = $page.url.pathname;
+    console.log(path)
 </script>
 
 <div class="flex justify-between px-20 items-center bg-opacity-0 sticky top-10 z-10 h-0">

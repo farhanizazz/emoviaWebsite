@@ -11,7 +11,7 @@
 				<Carousel arrows={false} let:currentPageIndex let:pagesCount let:showPage autoplay={true}>
 					<div slot="dots" class="flex gap-2">
 						{#each Array(pagesCount) as _, pageIndex (pageIndex)}
-							<button on:click={() => showPage(pageIndex)} class="h-3 w-3 bg-{currentPageIndex === pageIndex ? 'secondary' : 'main'} rounded-full mt-5"/>
+							<button on:click={() => showPage(pageIndex)} class="h-3 w-3 {currentPageIndex === pageIndex ? 'bg-secondary' : 'bg-main'} rounded-full mt-5"/>
 						{/each}
 					</div>
 					<div class="flex flex-col justify-center items-center w-full h-full gap-10 pt-20">
