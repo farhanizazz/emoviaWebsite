@@ -1,4 +1,4 @@
-import adapter from '@sveltejs/adapter-auto';
+import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/kit/vite';
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -9,7 +9,12 @@ const config = {
 		// See https://kit.svelte.dev/docs/adapters for more information about adapters.
 		adapter: adapter()
 	},
+	vite: {
+		optimizeDeps: {
+			include: ['lodash.get', 'lodash.isequal', 'lodash.clonedeep']
+		},
+	},
 	preprocess: vitePreprocess()
-};
+	};
 
-export default config;
+	export default config;
