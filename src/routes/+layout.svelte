@@ -3,6 +3,8 @@
 	import Nav from './Nav.svelte';
 </script>
 
-<Nav />
+<div>
+	<Nav />
 
-<slot />
+	<slot />
+</div>
