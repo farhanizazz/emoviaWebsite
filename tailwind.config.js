@@ -28,7 +28,8 @@ export default {
       // => @media (min-width: 1536px) { ... }
     },
     backgroundImage: {
-      bg: 'url("/src/lib/images/bg.png")'
+      bg: 'url("/src/lib/images/bg.png")',
+      bgVid: 'url("/src/lib/images/bg.mp4")'
     }
   },
   plugins: [],
