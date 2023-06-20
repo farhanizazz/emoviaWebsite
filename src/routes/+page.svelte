@@ -142,12 +142,12 @@
 						<img alt="" src={car1} class="h-[60vh]" />
 						<div>
 							<p
-								class="md:leading-[1.3]  text-left font-extrabold font-content text-main md:text-5xl text-[8vh]"
+								class="md:leading-[1.3]  text-left font-extrabold font-content text-main md:text-5xl lg:text-[8vh]"
 							>
 								EMOVIA<br />CIPTA<br />PEMUDA
 							</p>
 							<button
-								class="rounded-full bg-secondary px-[2.5em] py-[0.75em] font-content font-extrabold text-main text-[3vh] md:text-l mt-5 hover:bg-main hover:text-secondary"
+								class="rounded-full bg-secondary px-[2.5em] py-[0.75em] font-content font-extrabold text-main lg:text-[2.5vh] md:text-l mt-5 hover:bg-main hover:text-secondary"
 								>ABOUT US</button
 							>
 						</div>
@@ -163,7 +163,7 @@
 								EMOVIA<br />CIPTA<br />PEMUDA
 							</p>
 							<button
-								class="rounded-full bg-secondary px-[2.5em] py-[0.75em] font-content font-extrabold text-main lg:text-[3vh] md:text-l mt-5 hover:bg-main hover:text-secondary"
+								class="rounded-full bg-secondary px-[2.5em] py-[0.75em] font-content font-extrabold text-main lg:text-[2.5vh] md:text-l mt-5 hover:bg-main hover:text-secondary"
 								>ABOUT US</button
 							>
 						</div>
@@ -179,7 +179,7 @@
 								EMOVIA<br />CIPTA<br />PEMUDA
 							</p>
 							<button
-								class="rounded-full bg-secondary px-[2.5em] py-[0.75em] font-content font-extrabold text-main lg:text-[3vh] md:text-l mt-5 hover:bg-main hover:text-secondary"
+								class="rounded-full bg-secondary px-[2.5em] py-[0.75em] font-content font-extrabold text-main lg:text-[2.5vh] md:text-l mt-5 hover:bg-main hover:text-secondary"
 								>ABOUT US</button
 							>
 						</div>
