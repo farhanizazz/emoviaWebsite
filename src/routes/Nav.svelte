@@ -11,6 +11,17 @@
 
 	$: path = $page.url.pathname;
 	$: console.log(path);
+
+	function handleAnchorClick (event) {
+		event.preventDefault()
+		const link = event.currentTarget
+		const anchorId = new URL(link.href).hash.replace('#', '')
+		const anchor = document.getElementById(anchorId)
+		window.scrollTo({
+			top: anchor.offsetTop,
+			behavior: 'smooth'
+		})
+	}
 </script>
 
 <div class="flex justify-between px-20 py-5 items-center bg-opacity-0 fixed top-10 z-50 h-0 left-0 right-0">
@@ -18,7 +29,7 @@
 
 	<div class="flex flex-row font-menu gap-x-5 text-2xl">
 		<!-- svelte-ignore a11y-invalid-attribute -->
-		<a href="#" class="text-main hover:text-secondary {activeNav == 'home' && 'text-secondary'}"
+		<a href="#" class="text-main hover:text-secondary {activeNav == 'home' && 'text-secondary'}" on:click={handleAnchorClick}
 			>HOME</a
 		>
 		<!-- svelte-ignore a11y-invalid-attribute -->
@@ -28,7 +39,7 @@
 				'text-secondary'} mix-blend-difference">SERVICES</a
 		>
 		<!-- svelte-ignore a11y-invalid-attribute -->
-		<a href="#about" class="text-main hover:text-secondary {activeNav == 'about' && 'text-secondary'}"
+		<a href="#About" class="text-main hover:text-secondary {activeNav == 'about' && 'text-secondary'}" on:click={handleAnchorClick}
 			>ABOUT</a
 		>
 		<!-- svelte-ignore a11y-invalid-attribute -->
