@@ -9,7 +9,10 @@
 	import bgVid from '$lib/videos/bg.mp4';
 	import car2 from '$lib/images/car2.png';
 	import car3 from '$lib/images/car3.png';
-	import bgImg from '$lib/images/bg.png'
+	import bgImg from '$lib/images/bg.png';
+	import mailIcon from '$lib/images/contact/mail.png';
+	import mapIcon from '$lib/images/contact/map.png';
+	import phoneIcon from '$lib/images/contact/phone.png';
 
 	let isInView1;
 	let isInView2;
@@ -122,13 +125,13 @@
 		class="absolute -z-10 w-[177.77777778vh] min-w-full min-h-[56.25vw] max-w-none top-0"
 	>
 		<source src={bgVid} type="video/mp4" />
-		<img alt='' src={bgImg}/>
+		<img alt="" src={bgImg} />
 	</video>
 </header>
 
-<div class="bg-main px-40 py-52 content relative -z-20" id="content">
+<div class="bg-main content relative -z-20" id="content">
 	<div
-		class="content1"
+		class="content1 h-screen flex items-center px-20"
 		use:inview={{ rootMargin: '-10%', unobserveOnEnter: true }}
 		on:inview_change={handleChange1}
 	>
@@ -139,9 +142,11 @@
 				}}
 				use:inview={{ unobserveOnEnter: false, rootMargin: '-25%' }}
 				in:fly={{ delay: 100, y: 50 }}
-				class="flex flex-col items-center mt-10 gap-12"
+				class="flex flex-col items-center gap-12 justify-center mt-20"
 			>
-				<h1 class="basis-full text-4xl font-bold text-secondary font-content h-[75px] mt-[-75px]" id="About">ABOUT US</h1>
+				<h1 class="basis-full text-4xl font-bold text-secondary font-content block" id="About">
+					ABOUT US
+				</h1>
 				<div class="flex flex-row gap-14">
 					<!-- <div class="flex flex-row gap-14 items-center opacity-0" > -->
 					<img alt="" src={aboutus} class="h-64" />
@@ -161,7 +166,7 @@
 	</div>
 
 	<div
-		class="content2 mt-96"
+		class="content2 h-screen flex items-center"
 		use:inview={{ unobserveOnEnter: true }}
 		on:inview_change={handleChange2}
 	>
@@ -170,24 +175,60 @@
 				on:inview_enter={() => {
 					active.set('about');
 				}}
-				use:inview={{ rootMargin: '-10%', unobserveOnEnter: false }}
+				use:inview={{ rootMargin: '-30%', unobserveOnEnter: false }}
 				in:fly={{ delay: 100, y: 50 }}
-				class="flex flex-row gap-14 items-center"
+				class="flex flex-col gap-14 items-center px-20"
 			>
-				<!-- <div class="flex flex-row gap-14 items-center opacity-0" > -->
-				<img alt="" src={aboutus} class="h-64" />
-				<div>
-					<p class="text-secondary font-content font-extrabold text-4xl leading-tight">
-						PT. EMOVIA CIPTA<br />PEMUDA
-					</p>
-					<p class="text-[#fff] font-content text-xl font-light leading-loose text-justify">
-						PT Emovia Cipta Pemuda Running in Event Creative Media, Film Production House, Company
-						Profile Video Production, Drone Inspection and Mapping. There are subsidiaries beneath
-						PT Emovia Cipta Pemuda such as Emovia Production and Atas Langit Creative.
-					</p>
+				<h1 class="basis-full text-4xl font-bold text-secondary font-content block" id="Services">
+					OUR SERVICES
+				</h1>
+				<div class="flex flex-row gap-14">
+					<!-- <div class="flex flex-row gap-14 items-center opacity-0" > -->
+					<img alt="" src={aboutus} class="h-64" />
+					<div>
+						<p class="text-secondary font-content font-extrabold text-4xl leading-tight">
+							PT. EMOVIA CIPTA<br />PEMUDA
+						</p>
+						<p class="text-[#fff] font-content text-xl font-light leading-loose text-justify">
+							PT Emovia Cipta Pemuda Running in Event Creative Media, Film Production House, Company
+							Profile Video Production, Drone Inspection and Mapping. There are subsidiaries beneath
+							PT Emovia Cipta Pemuda such as Emovia Production and Atas Langit Creative.
+						</p>
+					</div>
 				</div>
 			</div>
 		{/if}
+	</div>
+</div>
+
+<div class="bg-bgContact bg-cover">
+	<div class="flex-col bg-[#fff]/90 center py-5">
+		<div class="flex flex-row justify-center items-center py-20 gap-10">
+			<h1 class="text-4xl font-bold text-main">
+				Contact <span class="text-secondary">Us.</span>
+			</h1>
+			<div class="flex flex-row items-center justify-center text-main font-semibold gap-20">
+				<div class="flex items-center flex-row gap-4">
+					<img class="h-12" src={phoneIcon} alt="" />
+					<h1 class="text-sm text-center">+62-882-3311-2001</h1>
+				</div>
+				<div class="flex items-center flex-row gap-4">
+					<img class="h-12" src={mailIcon} alt="" />
+					<h1 class="text-sm text-center">
+						zahid@emoviaciptapemuda.com<br />aka@emoviaciptapemuda.com
+					</h1>
+				</div>
+				<div class="flex items-center flex-row gap-4">
+					<img class="h-12" src={mapIcon} alt="" />
+					<h1 class="text-sm text-center">
+						Rewwin, Waru Sub-District, Sidoarjo City,<br />East Java, 61256
+					</h1>
+				</div>
+			</div>
+		</div>
+		<div>
+			<h1 class="text-center font-semibold text-main">Feel free to contact us. We'll consider all suggestions, ideas, and projects</h1>
+		</div>
 	</div>
 </div>
 

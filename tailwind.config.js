@@ -29,6 +29,7 @@ export default {
     },
     backgroundImage: {
       bg: 'url("/src/lib/images/bg.png")',
+      bgContact: 'url("/src/lib/images/bgContact.png")',
       bgVid: 'url("/src/lib/images/bg.mp4")'
     }
   },

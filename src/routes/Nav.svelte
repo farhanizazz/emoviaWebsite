@@ -18,7 +18,7 @@
 		const anchorId = new URL(link.href).hash.replace('#', '')
 		const anchor = document.getElementById(anchorId)
 		window.scrollTo({
-			top: anchor.offsetTop,
+			top: anchor.offsetTop + (window.innerHeight * (70 / 100)),
 			behavior: 'smooth'
 		})
 	}
@@ -29,18 +29,18 @@
 
 	<div class="flex flex-row font-menu gap-x-5 text-2xl">
 		<!-- svelte-ignore a11y-invalid-attribute -->
-		<a href="#" class="text-main hover:text-secondary {activeNav == 'home' && 'text-secondary'}" on:click={handleAnchorClick}
+		<a href="#" class="text-main hover:text-secondary {activeNav == 'home' && 'text-secondary'}" on:click={() => window.scrollTo({top: 0, behavior: 'smooth'})}
 			>HOME</a
 		>
 		<!-- svelte-ignore a11y-invalid-attribute -->
 		<a
-			href="#"
+			href="#About"
 			class="text-main hover:text-secondary {activeNav == 'services' &&
-				'text-secondary'} mix-blend-difference">SERVICES</a
+				'text-secondary'} mix-blend-difference" on:click={handleAnchorClick}>ABOUT</a
 		>
 		<!-- svelte-ignore a11y-invalid-attribute -->
-		<a href="#About" class="text-main hover:text-secondary {activeNav == 'about' && 'text-secondary'}" on:click={handleAnchorClick}
-			>ABOUT</a
+		<a href="#Services" class="text-main hover:text-secondary {activeNav == 'about' && 'text-secondary'}" on:click={handleAnchorClick}
+			>SERVICES</a
 		>
 		<!-- svelte-ignore a11y-invalid-attribute -->
 		<a href="#" class="text-main hover:text-secondary {activeNav == 'contact' && 'text-secondary'}"
