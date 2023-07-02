@@ -12,10 +12,10 @@ export default {
       secondary: '#E4BF56',
     },
     screens: {
-      'sm': '640px',
+      'sm': '0px',
       // => @media (min-width: 640px) { ... }
 
-      'md': '768px',
+      'md': '767px',
       // => @media (min-width: 768px) { ... }
 
       'lg': '1024px',
@@ -30,7 +30,8 @@ export default {
     backgroundImage: {
       bg: 'url("/src/lib/images/bg.png")',
       bgContact: 'url("/src/lib/images/bgContact.png")',
-      bgVid: 'url("/src/lib/images/bg.mp4")'
+      bgVid: 'url("/src/lib/images/bg.mp4")',
+      bgMini: 'url("/src/lib/images/bgMini.png")'
     }
   },
   plugins: [],

@@ -2,6 +2,7 @@
 	import '../app.css';
 	import Nav from './Nav.svelte';
 	import icon from '$lib/images/Asset 1.png'
+	import Footer from './Footer.svelte';
 </script>
 
 
@@ -14,6 +15,6 @@
 
 <div>
 	<Nav />
-
 	<slot />
+	<Footer/>
 </div>

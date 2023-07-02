@@ -10,9 +10,7 @@
 	import car2 from '$lib/images/car2.png';
 	import car3 from '$lib/images/car3.png';
 	import bgImg from '$lib/images/bg.png';
-	import mailIcon from '$lib/images/contact/mail.png';
-	import mapIcon from '$lib/images/contact/map.png';
-	import phoneIcon from '$lib/images/contact/phone.png';
+	import Nav from './Nav.svelte';
 
 	let isInView1;
 	let isInView2;
@@ -42,6 +40,13 @@
 	// 		y: 20
 	// 	}, 1)
 	// });
+	const style = {
+		carouselOuterDiv: 'flex flex-col justify-center sm:items-start md:items-center w-full h-full gap-10 md:pt-20 sm:pt-20 px-5',
+		carouseInnerDiv: 'flex sm:flex-col-reverse md:flex-row sm:gap-5 md:gap-20 sm:items-start md:items-center',
+		carouselImg: 'md:h-[60vh] sm:w-40 md:w-auto',
+		carouselTitle: 'md:leading-[1.3] text-left font-extrabold font-content text-main md:text-5xl lg:text-[8vh] sm:text-lg',
+		carouselButton: 'rounded-full bg-secondary px-[2em] py-[0.75em] font-content font-extrabold text-main lg:text-[2.5vh] md:text-l sm:text-xs mt-5 hover:bg-main hover:text-secondary'
+	}
 </script>
 
 <div class="h-32 w-full top-0 bg-[#fff] fixed -z-10 nav" />
@@ -66,49 +71,49 @@
 							/>
 						{/each}
 					</div>
-					<div class="flex flex-col justify-center items-center w-full h-full gap-10 pt-20">
-						<div class="flex flex-row gap-20 items-center">
-							<img alt="" src={car1} class="h-[60vh]" />
+					<div class={style.carouselOuterDiv}>
+						<div class={style.carouseInnerDiv}>
+							<img alt="" src={car1} class={style.carouselImg} />
 							<div>
 								<p
-									class="md:leading-[1.3] text-left font-extrabold font-content text-main md:text-5xl lg:text-[8vh]"
+									class={style.carouselTitle}
 								>
 									EMOVIA<br />CIPTA<br />PEMUDA
 								</p>
 								<button
-									class="rounded-full bg-secondary px-[2em] py-[0.75em] font-content font-extrabold text-main lg:text-[2.5vh] md:text-l mt-5 hover:bg-main hover:text-secondary"
+									class={style.carouselButton}
 									>ABOUT US</button
 								>
 							</div>
 						</div>
 					</div>
-					<div class="flex flex-col justify-center items-center w-full h-full gap-10 pt-20">
-						<div class="flex flex-row gap-20 items-center">
-							<img alt="" src={car2} class="h-[60vh]" />
+					<div class={style.carouselOuterDiv}>
+						<div class={style.carouseInnerDiv}>
+							<img alt="" src={car2} class={style.carouselImg}/>
 							<div>
 								<p
-									class="md:leading-[1.3] text-left font-extrabold font-content text-main md:text-5xl lg:text-[8vh]"
+								class={style.carouselTitle}
 								>
 									OUR<br />AWESOME<br />PROJECT
 								</p>
 								<button
-									class="rounded-full bg-secondary px-[2em] py-[0.75em] font-content font-extrabold text-main lg:text-[2.5vh] md:text-l mt-5 hover:bg-main hover:text-secondary"
+								class={style.carouselButton}
 									>PORTOFOLIO</button
 								>
 							</div>
 						</div>
 					</div>
-					<div class="flex flex-col justify-center items-center w-full h-full gap-10 pt-20">
-						<div class="flex flex-row gap-20 items-center">
-							<img alt="" src={car3} class="h-[60vh]" />
+					<div class={style.carouselOuterDiv}>
+						<div class={style.carouseInnerDiv}>
+							<img alt="" src={car3} class={style.carouselImg} />
 							<div>
 								<p
-									class="md:leading-[1.3] text-left font-extrabold font-content text-main md:text-5xl lg:text-[8vh]"
+									class={style.carouselTitle}
 								>
 									LET'S<br />WORK<br />WITH US
 								</p>
 								<button
-									class="rounded-full bg-secondary px-[2em] py-[0.75em] font-content font-extrabold text-main lg:text-[2.5vh] md:text-l mt-5 hover:bg-main hover:text-secondary"
+								class={style.carouselButton}
 									>CONTACT US</button
 								>
 							</div>
@@ -131,9 +136,10 @@
 
 <div class="bg-main content relative -z-20" id="content">
 	<div
-		class="content1 h-screen flex items-center px-20"
+		class="content1 h-full py-20 flex items-center px-10 justify-center"
 		use:inview={{ rootMargin: '-10%', unobserveOnEnter: true }}
 		on:inview_change={handleChange1}
+		id="About"
 	>
 		{#if isInView1}
 			<div
@@ -144,17 +150,17 @@
 				in:fly={{ delay: 100, y: 50 }}
 				class="flex flex-col items-center gap-12 justify-center mt-20"
 			>
-				<h1 class="basis-full text-4xl font-bold text-secondary font-content block" id="About">
+				<h1 class="basis-full text-4xl font-bold text-secondary font-content block">
 					ABOUT US
 				</h1>
-				<div class="flex flex-row gap-14">
+				<div class="flex sm:flex-col md:flex-row gap-14 items-center">
 					<!-- <div class="flex flex-row gap-14 items-center opacity-0" > -->
-					<img alt="" src={aboutus} class="h-64" />
-					<div>
-						<p class="text-[#fff] font-content font-extrabold text-[2.5vw] leading-tight mb-6">
+					<img alt="" src={aboutus} class="md:h-64 sm:h-auto sm:w-full" />
+					<div class="max-w-[22rem]">
+						<p class="text-[#fff] font-content font-extrabold text-xl leading-tight mb-6">
 							WE ARE EMOVIA, WE PRODUCE<br /><span class="text-secondary">AWESOME PROJECTS.</span>
 						</p>
-						<p class="text-[#fff] font-content text-[1.25vw] font-light leading-loose text-justify">
+						<p class="text-[#fff] font-content text-sm font-light leading-loose text-justify">
 							PT Emovia Cipta Pemuda Running in Event Creative Media, Film Production House, Company
 							Profile Video Production, Drone Inspection and Mapping. There are subsidiaries beneath
 							PT Emovia Cipta Pemuda such as Emovia Production and Atas Langit Creative.
@@ -166,9 +172,10 @@
 	</div>
 
 	<div
-		class="content2 h-screen flex items-center"
+		class="content2 h-full flex items-center justify-center"
 		use:inview={{ unobserveOnEnter: true }}
 		on:inview_change={handleChange2}
+		id="Services"
 	>
 		{#if isInView2}
 			<div
@@ -177,19 +184,19 @@
 				}}
 				use:inview={{ rootMargin: '-30%', unobserveOnEnter: false }}
 				in:fly={{ delay: 100, y: 50 }}
-				class="flex flex-col gap-14 items-center px-20"
+				class="flex flex-col gap-14 items-center px-10 py-36"
 			>
-				<h1 class="basis-full text-4xl font-bold text-secondary font-content block" id="Services">
+				<h1 class="basis-full text-4xl font-bold text-secondary font-content block">
 					OUR SERVICES
 				</h1>
-				<div class="flex flex-row gap-14">
+				<div class="flex sm:flex-col md:flex-row gap-14 items-center">
 					<!-- <div class="flex flex-row gap-14 items-center opacity-0" > -->
-					<img alt="" src={aboutus} class="h-64" />
-					<div>
-						<p class="text-secondary font-content font-extrabold text-4xl leading-tight">
-							PT. EMOVIA CIPTA<br />PEMUDA
+					<img alt="" src={aboutus} class="md:h-64 sm:h-auto sm:w-full" />
+					<div class="max-w-[22rem]">
+						<p class="text-[#fff] font-content font-extrabold text-xl leading-tight mb-6">
+							WE ARE EMOVIA, WE PRODUCE<br /><span class="text-secondary">AWESOME PROJECTS.</span>
 						</p>
-						<p class="text-[#fff] font-content text-xl font-light leading-loose text-justify">
+						<p class="text-[#fff] font-content text-sm font-light leading-loose text-justify">
 							PT Emovia Cipta Pemuda Running in Event Creative Media, Film Production House, Company
 							Profile Video Production, Drone Inspection and Mapping. There are subsidiaries beneath
 							PT Emovia Cipta Pemuda such as Emovia Production and Atas Langit Creative.
@@ -198,37 +205,6 @@
 				</div>
 			</div>
 		{/if}
-	</div>
-</div>
-
-<div class="bg-bgContact bg-cover">
-	<div class="flex-col bg-[#fff]/90 center py-5">
-		<div class="flex flex-row justify-center items-center py-20 gap-10">
-			<h1 class="text-4xl font-bold text-main">
-				Contact <span class="text-secondary">Us.</span>
-			</h1>
-			<div class="flex flex-row items-center justify-center text-main font-semibold gap-20">
-				<div class="flex items-center flex-row gap-4">
-					<img class="h-12" src={phoneIcon} alt="" />
-					<h1 class="text-sm text-center">+62-882-3311-2001</h1>
-				</div>
-				<div class="flex items-center flex-row gap-4">
-					<img class="h-12" src={mailIcon} alt="" />
-					<h1 class="text-sm text-center">
-						zahid@emoviaciptapemuda.com<br />aka@emoviaciptapemuda.com
-					</h1>
-				</div>
-				<div class="flex items-center flex-row gap-4">
-					<img class="h-12" src={mapIcon} alt="" />
-					<h1 class="text-sm text-center">
-						Rewwin, Waru Sub-District, Sidoarjo City,<br />East Java, 61256
-					</h1>
-				</div>
-			</div>
-		</div>
-		<div>
-			<h1 class="text-center font-semibold text-main">Feel free to contact us. We'll consider all suggestions, ideas, and projects</h1>
-		</div>
 	</div>
 </div>
 
