@@ -1,0 +1,3 @@
+import{w as g}from"./paths.11d48be3.js";import{a6 as u,a7 as h}from"./index.8a859f89.js";const C=g("home");function x(t){const n=t-1;return n*n*n+1}function M(t){return Math.sin(t*Math.PI/2)}function O(t,{delay:n=0,duration:o=400,easing:s=h}={}){const a=+getComputedStyle(t).opacity;return{delay:n,duration:o,easing:s,css:c=>`opacity: ${c*a}`}}function S(t,{delay:n=0,duration:o=400,easing:s=x,x:a=0,y:c=0,opacity:f=0}={}){const r=getComputedStyle(t),e=+r.opacity,y=r.transform==="none"?"":r.transform,m=e*(1-f),[p,l]=u(a),[$,d]=u(c);return{delay:n,duration:o,easing:s,css:(i,b)=>`
+			transform: ${y} translate(${(1-i)*p}${l}, ${(1-i)*$}${d});
+			opacity: ${e-m*b}`}}export{C as a,O as b,S as f,M as s};
